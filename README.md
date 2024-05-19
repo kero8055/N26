@@ -21,18 +21,26 @@ In this case, there was a requirement to fetch product details based on UUID, wh
 
 **Custom Fields Object wise:**
 
-**Contact**- 
 
+**Contact-** 
+
+ 
   Home_Country__c (Picklist-Used Global Value Set for Country list)
   
   Product__c (Lookup-with Standard Object Product2)
   
   UUID__c (Text-As an external ID field this needs to be unique per contact and will be fetched by external systems.)
 
-  **PriceBook2**
+  **PriceBook2-**
+
+  
   Country__c (Picklist-Used Global Value Set for Country list)
 
-  **PriceBookEntry**
+  
+
+**PriceBookEntry-**
+
+  
   Category_Value__c (Text-To store values which are not currency value)
   
 
