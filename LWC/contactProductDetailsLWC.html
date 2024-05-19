@@ -1,0 +1,41 @@
+<template>
+    <lightning-card title="Product Details" icon-name="standard:product">
+        <div class="slds-box">
+            <template lwc:if={showProductCountry}>
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-size_6-of-12">
+                        <h1><strong>Product Name:</strong></h1>
+                    </div>
+                    <div class="slds-col slds-size_6-of-12">
+                        {productName}
+                    </div>
+                    <div class="slds-col slds-size_6-of-12">
+                        <h1><strong>Country:</strong></h1>
+                    </div>
+                    <div class="slds-col slds-size_6-of-12">
+                        {countryName}
+                    </div>
+                </div>
+            </template>
+            <template lwc:if={noPriceBookEntries}>
+                <div class="slds-align_absolute-center slds-box">
+                    <b>{message}</b>
+                </div>
+            </template>
+            <template lwc:else>   
+                <template for:each={productDetails} for:item="product">
+                    <div key={product.Id}>
+                        <div class="slds-grid">
+                            <div class="slds-col slds-size_6-of-12">
+                                <h1> <b>{product.pricebookName}</b></h1>
+                            </div>
+                            <div class="slds-col slds-size_6-of-12">
+                                <h1>{product.pricebookValue}</h1>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>
